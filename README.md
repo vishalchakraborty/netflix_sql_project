@@ -44,11 +44,9 @@ CREATE TABLE netflix
 ### 1. Count the Number of Movies vs TV Shows
 
 ```sql
-SELECT 
-    type,
-    COUNT(*)
-FROM netflix
-GROUP BY 1;
+SELECT TYPE,
+   COUNT (*) AS TOTAL_CONTENT 
+       FROM NETFLIX  GROUP BY TYPE ;
 ```
 
 **Objective:** Determine the distribution of content types on Netflix.
@@ -84,9 +82,10 @@ WHERE rank = 1;
 ### 3. List All Movies Released in a Specific Year (e.g., 2020)
 
 ```sql
-SELECT * 
-FROM netflix
-WHERE release_year = 2020;
+SELECT * FROM NETFLIX 
+   WHERE TYPE = 'Movie'
+   AND
+   release_year = 2020;
 ```
 
 **Objective:** Retrieve all movies released in a specific year.
